@@ -1,0 +1,19 @@
+<div >
+    <!-- button -->
+    <div id='chartTypesButton' class='dropdownButton pentaho-downbutton' ng-click="toggleSelect()" title='@{ttChartType}'></div>
+    <!-- dropdown -->
+    <div id="chartTypesDropdown" class="dropdownPopup" style="z-index:1000" ng-show="isDropdownVisible" ng-controller="DropdownCtrl">
+        <div class="dropdownPopupContainer">
+            <div ng-repeat="option in items" ng-switch on="option.option" class="optionContainer" separator="{{!option.option}}">            
+                <div class="option {{option.selected}}" ng-switch-when="true" ng-click="toggleSelectedOption(option.id);">
+                    <div class="optionImg"></div>
+                    <div id="{{option.id}}" class="optionLabel">{{option.label}}</div>
+                </div>
+                <div ng-switch-when="false" class="optionSeparator">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
